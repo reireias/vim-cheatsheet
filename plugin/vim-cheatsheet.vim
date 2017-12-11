@@ -5,7 +5,7 @@ function! s:toggle_cheat_sheet(cmd)
     execute 'bd' s:cheatbuf
     unlet s:cheatbuf
   else
-    let a:path = expand(g:cheat_sheet_file)
+    let a:path = expand(g:cheatsheet#cheat_file)
     if filereadable(a:path)
       split
       execute 'view' a:path

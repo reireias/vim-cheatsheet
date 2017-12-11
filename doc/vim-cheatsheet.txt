@@ -1,4 +1,4 @@
-*vim-cheatsheet*	Open your cheatsheet file
+*vim-cheatsheet*	Show your cheatsheet file quickly
 
 Version: 1.0
 Author: reireias <reireias at gmail.com>
@@ -7,12 +7,40 @@ License: MIT license
 ==============================================================================
 CONTENTS					*vim-cheatsheet-contents*
 
-Introduction	|vim-cheatsheet-introduction|
+Usage		|vim-cheatsheet-usage|
+Interface	|vim-cheatsheet-interface|
+  Variables	  |vim-cheatsheet-variables|
+  Commands	  |vim-cheatsheet-commands|
 
 ==============================================================================
-INTRODUCTION					*vim-cheatsheet-introduction*
+USAGE						*vim-cheatsheet-usage*
 
-T.B.D.
+	Set |g:cheatsheet#cheat_file| in your .vimrc
+
+	To open cheatsheet file.
+>
+	:Cheat
+<
+	To close cheatsheet file buffer.
+>
+	:Cheat
+<
+
+==============================================================================
+INTERFACE					*vim-cheatsheet-interface*
+
+------------------------------------------------------------------------------
+VARIABLES					*vim-cheatsheet-variables*
+
+						*g:cheatsheet#cheat_file*
+g:cheatsheet#cheat_file
+		Specify your cheatsheet file path.
+
+------------------------------------------------------------------------------
+COMMANDS					*vim-cheatsheet-commands*
+
+:Cheat						*:Cheat*
+		Open/Close your cheatsheet file.
 
 ==============================================================================
 vim:tw=78:ts=8:ft=help:norl:noet:fen:
