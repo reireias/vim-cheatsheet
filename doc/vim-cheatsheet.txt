@@ -36,6 +36,12 @@ VARIABLES					*vim-cheatsheet-variables*
 g:cheatsheet#cheat_file
 		Specify your cheatsheet file path.
 
+						*g:cheatsheet#vsplit*
+g:cheatsheet#vsplit
+		If you set it to 1, cheatsheet opens vertical splited pane.
+
+		Defaults: 0
+
 ------------------------------------------------------------------------------
 COMMANDS					*vim-cheatsheet-commands*
 

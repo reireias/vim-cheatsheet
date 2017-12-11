@@ -8,7 +8,7 @@ vim-cheatsheet opens your cheat sheet file.
 Write your cheatsheet file path in `.vimrc`
 
 ```
-let g:cheat_sheet_file='/path/to/your/cheetsheet'
+let g:cheatsheet#cheat_file = '/path/to/your/cheetsheet'
 ```
 
 Run vim-cheatsheet to show your cheatsheet file as readonly.

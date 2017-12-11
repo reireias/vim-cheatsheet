@@ -1,6 +1,11 @@
+" Set settings to default values.
+if !exists('g:cheatsheet#vsplit')
+  let g:cheatsheet#vsplit = 0
+endif
+
 command! -nargs=? -complete=command Cheat call <SID>toggle_cheat_sheet(<q-args>)
 
-function! s:toggle_cheat_sheet(cmd) abort
+function! s:toggle_cheat_sheet(cmd)
   if exists('s:cheatbuf')
     call s:close_cheat_sheet(s:cheatbuf)
     unlet s:cheatbuf
@@ -17,7 +22,11 @@ function! s:open_cheat_sheet() abort
     return
   endif
 
-  split
+  let l:split_command = ':sp'
+  if g:cheatsheet#vsplit != 0
+    let l:split_command = ':vs'
+  endif
+  execute l:split_command
   execute 'view' l:path
   return bufnr('%')
 endfunction
