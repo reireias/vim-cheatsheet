@@ -10,15 +10,15 @@ function! s:toggle_cheat_sheet(cmd) abort
 endfunction
 
 function! s:open_cheat_sheet() abort
-  let a:path = expand(g:cheatsheet#cheat_file)
+  let l:path = expand(g:cheatsheet#cheat_file)
 
-  if !filereadable(a:path)
+  if !filereadable(l:path)
     echo "not exists."
     return
   endif
 
   split
-  execute 'view' a:path
+  execute 'view' l:path
   return bufnr('%')
 endfunction
 
