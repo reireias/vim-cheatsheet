@@ -1,17 +1,27 @@
 command! -nargs=? -complete=command Cheat call <SID>toggle_cheat_sheet(<q-args>)
 
-function! s:toggle_cheat_sheet(cmd)
+function! s:toggle_cheat_sheet(cmd) abort
   if exists('s:cheatbuf')
-    execute 'bd' s:cheatbuf
+    call s:close_cheat_sheet(s:cheatbuf)
     unlet s:cheatbuf
   else
-    let a:path = expand(g:cheatsheet#cheat_file)
-    if filereadable(a:path)
-      split
-      execute 'view' a:path
-      let s:cheatbuf = bufnr('%')
-    else
-      echo "not exists."
-    endif
+    let s:cheatbuf = s:open_cheat_sheet()
   endif
+endfunction
+
+function! s:open_cheat_sheet() abort
+  let a:path = expand(g:cheatsheet#cheat_file)
+
+  if !filereadable(a:path)
+    echo "not exists."
+    return
+  endif
+
+  split
+  execute 'view' a:path
+  return bufnr('%')
+endfunction
+
+function! s:close_cheat_sheet(cheatbuf) abort
+  execute 'bd' a:cheatbuf
 endfunction
