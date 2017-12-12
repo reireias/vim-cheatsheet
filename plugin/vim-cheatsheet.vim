@@ -18,7 +18,7 @@ function! s:open_cheat_sheet() abort
   let l:path = expand(g:cheatsheet#cheat_file)
 
   if !filereadable(l:path)
-    echo "not exists."
+    echo 'not exists.'
     return
   endif
 

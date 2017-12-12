@@ -1,0 +1,10 @@
+---
+sudo: required
+language: python
+python:
+  - "2.7"
+  - "3.6"
+install:
+  - pip install vim-vint
+script:
+  - vint --color --style plugin/vim-cheatsheet.vim
