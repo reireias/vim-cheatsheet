@@ -17,6 +17,11 @@ Run vim-cheatsheet to show your cheatsheet file as readonly.
 :Cheat
 ```
 
+In Neovim 4 or higher, you can show cheatsheet in float window if you set the following settings.
+```
+let g:cheatsheet#float_window = 1
+```
+
 ## Install
 
 Below are some helper lines for popular package managers:
