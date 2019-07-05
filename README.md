@@ -4,6 +4,14 @@
 ## About
 vim-cheatsheet opens your cheat sheet file.
 
+Open your cheatsheet file.
+
+![cheatsheet_1](https://user-images.githubusercontent.com/24800246/60747176-5b8bc500-9fbe-11e9-86ad-56ab70342ea6.png)
+
+Using float window in Neovim 4.
+
+![cheatsheet_2](https://user-images.githubusercontent.com/24800246/60747179-634b6980-9fbe-11e9-8180-9576dec3229b.png)
+
 ## Usage
 
 Write your cheatsheet file path in `.vimrc`
