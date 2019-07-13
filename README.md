@@ -30,6 +30,16 @@ In Neovim 4 or higher, you can show cheatsheet in float window if you set the fo
 let g:cheatsheet#float_window = 1
 ```
 
+### Change cheatsheet file by FIleType
+If you want to change cheatsheet file by Filetype, you should use the following settings.
+
+```
+augroup vimrc_filetype
+  autocmd!
+  autocmd FileType zsh let g:cheatsheet#cheat_file = '~/.cheatsheet-zsh.md'
+augroup END
+```
+
 ## Install
 
 Below are some helper lines for popular package managers:
