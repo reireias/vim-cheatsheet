@@ -7,6 +7,14 @@ if !exists('g:cheatsheet#float_window')
   let g:cheatsheet#float_window = 0
 endif
 
+if !exists('g:cheatsheet#float_window_width_ratio')
+  let g:cheatsheet#float_window_width_ratio = 0.8
+endif
+
+if !exists('g:cheatsheet#float_window_height_ratio')
+  let g:cheatsheet#float_window_height_ratio = 0.9
+endif
+
 command! -nargs=? -complete=command Cheat call <SID>toggle_cheat_sheet(<q-args>)
 
 function! s:toggle_cheat_sheet(cmd)
@@ -41,8 +49,8 @@ endfunction
 
 function! s:open_cheat_sheet_float() abort
   let buf = nvim_create_buf(v:false, v:true)
-  let width = winwidth(0) * 80 / 100
-  let height = winheight(0) * 90 / 100
+  let width = float2nr(round(winwidth(0) * g:cheatsheet#float_window_width_ratio))
+  let height = float2nr(round(winheight(0) * g:cheatsheet#float_window_height_ratio))
   " can move in float window?
   let focusable = v:true
   " editor or win or cursor
@@ -50,8 +58,8 @@ function! s:open_cheat_sheet_float() abort
   " base position
   let anchor = 'NW'
   " offset
-  let row = 1
-  let col = winwidth(0) * 10 / 100
+  let row = float2nr(round(winheight(0) * (1 - g:cheatsheet#float_window_height_ratio) / 2))
+  let col = float2nr(round(winwidth(0) * (1 - g:cheatsheet#float_window_width_ratio) / 2))
   let opts = {
         \ 'relative': relative,
         \ 'anchor': anchor,
