@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/reireias/vim-cheatsheet.svg?branch=master)](https://travis-ci.org/reireias/vim-cheatsheet)
+![test](https://github.com/reireias/vim-cheatsheet/workflows/test/badge.svg)
 # vim-cheatsheet
 
 ## About
