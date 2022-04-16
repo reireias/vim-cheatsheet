@@ -15,6 +15,10 @@ if !exists('g:cheatsheet#float_window_height_ratio')
   let g:cheatsheet#float_window_height_ratio = 0.9
 endif
 
+if !exists('g:cheatsheet#float_window_blend_ratio')
+  let g:cheatsheet#float_window_blend_ratio = 0
+endif
+
 command! -nargs=? -complete=command Cheat call <SID>toggle_cheat_sheet(<q-args>)
 
 function! s:toggle_cheat_sheet(cmd)
@@ -69,6 +73,7 @@ function! s:open_cheat_sheet_float() abort
         \ 'col': col
         \ }
   let winid = nvim_open_win(buf, v:true, opts)
+  call nvim_win_set_option(winid, 'winblend',g:cheatsheet#float_window_blend_ratio)
   let l:path = expand(g:cheatsheet#cheat_file)
   execute 'view' l:path
   " q = :Cheat
